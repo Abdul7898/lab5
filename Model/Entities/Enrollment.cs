@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab5.Model.Entities
+{
+    [Table("Enrollments")]
+    public class Enrollment
+    {
+        [Column("id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Column("student_id")]
+        public int StudentId { get; set; }
+        public String Student { get; set; } = null!;
+
+        [Column("course_id")]
+        public int CourseId { get; set; }
+        public String Courses { get; set; } = null!;
+
+        [Column("grade")]
+        public string Grade { get; set; } = null!;
+    }
+}
